@@ -1,125 +1,53 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KSBÜ - Akıllı Mevzuat Üretici (Demo)</title>
+    <title>KSBÜ - Akıllı Mevzuat Üretici (Şablon)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f1f5f9;
-        }
-
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f5f9; }
+        
         .document-preview {
             font-family: 'Times New Roman', Times, serif;
             font-size: 12pt;
             line-height: 1.5;
             color: #000;
             background-color: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             min-height: 29.7cm;
-            height: fit-content;
             padding: 2.5cm 2cm 2.5cm 2.5cm;
-            margin: 0 auto 50px auto;
+            margin: 0 auto;
             width: 21cm;
-            display: block;
         }
-
-        .madde-baslik {
-            font-weight: bold;
-            margin-top: 10px;
-            margin-bottom: 2px;
-        }
-
-        .madde-no {
-            font-weight: bold;
-        }
-
-        .bolum-ana {
-            text-align: center;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-
-        .bolum-alt {
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .madde-icerik {
-            text-indent: 1.25cm;
-            text-align: justify;
-        }
-
-        .bent-icerik {
-            padding-left: 1.25cm;
-            text-align: justify;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-
-        .toggle-checkbox:checked {
-            right: 0;
-            border-color: #10b981;
-        }
-
-        .toggle-checkbox:checked+.toggle-label {
-            background-color: #10b981;
-        }
-
-        .toggle-checkbox {
-            right: 4px;
-            z-index: 1;
-            border-color: #cbd5e1;
-            transition: all 0.3s;
-        }
-
-        .toggle-label {
-            background-color: #cbd5e1;
-            transition: all 0.3s;
-        }
+        
+        .madde-baslik { font-weight: bold; margin-top: 10px; margin-bottom: 2px; }
+        .madde-no { font-weight: bold; }
+        .bolum-ana { text-align: center; font-weight: bold; margin-top: 20px; }
+        .bolum-alt { text-align: center; font-weight: bold; margin-bottom: 15px; }
+        .document-preview p { text-indent: 1.25cm; text-align: justify; margin-top: 0; margin-bottom: 6px; }
+        .madde-icerik { text-indent: 1.25cm; text-align: justify; }
+        .bent-icerik { padding-left: 1.25cm; text-align: justify; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        
+        .toggle-checkbox:checked { right: 0; border-color: #10b981; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #10b981; }
+        .toggle-checkbox { right: 4px; z-index: 1; border-color: #cbd5e1; transition: all 0.3s; }
+        .toggle-label { background-color: #cbd5e1; transition: all 0.3s; }
 
         @media print {
-            .no-print {
-                display: none !important;
-            }
-
-            body {
-                background: white;
-            }
-
-            .document-preview {
-                box-shadow: none;
-                margin: 0;
-                padding: 0;
-                width: 100%;
-            }
-
-            @page {
-                size: A4;
-                margin: 0;
-            }
+            .no-print { display: none !important; }
+            body { background: white; }
+            .document-preview { box-shadow: none; margin: 0; padding: 0; width: 100%; }
+            @page { size: A4; margin: 0; }
         }
     </style>
 </head>
-
 <body class="h-screen flex flex-col overflow-hidden">
 
     <!-- ÜST MENÜ -->
@@ -131,49 +59,43 @@
             <div>
                 <div class="flex items-center gap-3">
                     <h1 class="text-lg font-bold">KSBÜ MEVZUAT ÜRETİCİ (MEBİS)</h1>
-                    <span
-                        class="bg-emerald-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider animate-pulse">Canlı
-                        Demo</span>
+                    <span class="bg-slate-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Boş Şablon</span>
                 </div>
                 <p class="text-[10px] text-blue-300">Resmi Gazete ve Kurumsal Yazım Standartları Uyumlu</p>
             </div>
         </div>
         <div class="flex items-center gap-4">
-            <button onclick="openUsulModal()"
-                class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-xs font-bold transition shadow-lg no-print">
+            <button onclick="openUsulModal()" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-xs font-bold transition shadow-lg no-print">
                 <i class="fa-solid fa-shield-halved mr-2"></i> ASLİ USUL DENETİMİ
             </button>
         </div>
     </header>
 
     <main class="flex-1 flex overflow-hidden">
-
+        
         <!-- SOL PANEL: GİRİŞLER -->
         <div class="w-[50%] h-full bg-white shadow-xl flex flex-col z-10 border-r border-slate-200 no-print">
-
+            
             <div class="bg-slate-50 border-b border-slate-200 p-3 flex justify-between items-center">
                 <div class="flex items-center gap-2">
                     <span class="text-xs font-bold text-slate-700">TDK & ÜSLUP ASİSTANI</span>
                     <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
-                        <input type="checkbox" name="toggle" id="tdkToggle"
-                            class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer"
-                            checked />
-                        <label for="tdkToggle"
-                            class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                        <input type="checkbox" name="toggle" id="tdkToggle" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/>
+                        <label for="tdkToggle" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
                     </div>
                 </div>
                 <p class="text-[10px] text-slate-500 italic">Otomatik formatlama aktiftir.</p>
             </div>
 
             <div class="flex-1 overflow-y-auto p-6 space-y-6" id="form-container">
-
+                
                 <!-- Mevzuat Adı -->
                 <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
                     <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Mevzuatın Tam Adı</label>
-                    <input type="text" id="mevzuat-adi"
-                        class="w-full p-2.5 border rounded font-bold uppercase text-slate-700 focus:ring-2 focus:ring-blue-500 outline-none"
-                        value="KÜTAHYA SAĞLIK BİLİMLERİ ÜNİVERSİTESİ SÜREKLİ EĞİTİM UYGULAMA VE ARAŞTIRMA MERKEZİ YÖNETMELİĞİ"
-                        oninput="autoUpdateContext(); updatePreview()">
+                    <input type="text" id="mevzuat-adi" class="w-full p-2.5 border rounded font-bold uppercase text-slate-700 focus:ring-2 focus:ring-blue-500 outline-none" 
+                           placeholder="Örn: KÜTAHYA SAĞLIK BİLİMLERİ ÜNİVERSİTESİ EĞİTİM-ÖĞRETİM YÖNETMELİĞİ" 
+                           value="" 
+                           oninput="autoUpdateContext(); updatePreview()">
                 </div>
 
                 <!-- Başlangıç Hükümleri -->
@@ -181,29 +103,18 @@
                     <h2 class="text-sm font-bold text-slate-800 border-b pb-2 flex items-center">
                         <i class="fa-solid fa-folder-open mr-2 text-blue-600"></i> BİRİNCİ BÖLÜM
                     </h2>
-                    <textarea id="amac-icerik" rows="2"
-                        class="w-full p-2 border rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none"
-                        placeholder="Amaç (Madde 1)" onblur="formatInput(this)"
-                        oninput="updatePreview()">Bu Yönetmeliğin amacı; Kütahya Sağlık Bilimleri Üniversitesi Sürekli Eğitim Uygulama ve Araştırma Merkezinin amaçlarına, faaliyet alanlarına, yönetim organlarına ve bu organların görevlerine ilişkin usul ve esasları düzenlemektir.</textarea>
-
-                    <textarea id="kapsam-icerik" rows="2"
-                        class="w-full p-2 border rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none"
-                        placeholder="Kapsam (Madde 2)" onblur="formatInput(this)"
-                        oninput="updatePreview()">Bu Yönetmelik; Kütahya Sağlık Bilimleri Üniversitesi Sürekli Eğitim Uygulama ve Araştırma Merkezinin amaçlarına, faaliyet alanlarına, yönetim organlarına ve bu organların görevlerine ilişkin hükümleri kapsar.</textarea>
-
-                    <textarea id="dayanak-icerik" rows="2"
-                        class="w-full p-2 border rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none"
-                        placeholder="Dayanak (Madde 3)" onblur="formatInput(this)"
-                        oninput="updatePreview()">Bu Yönetmelik; 4/11/1981 tarihli ve 2547 sayılı Yükseköğretim Kanununun 7 nci maddesinin birinci fıkrasının (d) bendinin (2) numaralı alt bendi ile 14 üncü maddesine dayanılarak hazırlanmıştır.</textarea>
-
+                    <textarea id="amac-icerik" rows="2" class="w-full p-2 border rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Amaç (Madde 1)" onblur="formatInput(this)" oninput="updatePreview()"></textarea>
+                    
+                    <textarea id="kapsam-icerik" rows="2" class="w-full p-2 border rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Kapsam (Madde 2)" onblur="formatInput(this)" oninput="updatePreview()"></textarea>
+                    
+                    <textarea id="dayanak-icerik" rows="2" class="w-full p-2 border rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Dayanak (Madde 3)" onblur="formatInput(this)" oninput="updatePreview()"></textarea>
+                    
                     <div class="bg-blue-50 p-4 rounded border border-blue-100">
                         <div class="flex justify-between items-center mb-2">
                             <span class="text-xs font-bold text-blue-800">Tanımlar (Madde 4)</span>
                         </div>
                         <div id="tanimlar-container" class="space-y-2"></div>
-                        <button onclick="addTanim()"
-                            class="mt-3 text-[10px] bg-blue-600 text-white px-3 py-1 rounded font-bold hover:bg-blue-700">YENİ
-                            TANIM EKLE</button>
+                        <button onclick="addTanim()" class="mt-3 text-[10px] bg-blue-600 text-white px-3 py-1 rounded font-bold hover:bg-blue-700">YENİ TANIM EKLE</button>
                     </div>
                 </div>
 
@@ -213,8 +124,7 @@
                         <i class="fa-solid fa-file-contract mr-2 text-emerald-600"></i> İKİNCİ BÖLÜM (Esas Hükümler)
                     </h2>
                     <div id="maddeler-container" class="space-y-4"></div>
-                    <button onclick="addMadde()"
-                        class="w-full bg-slate-800 text-white py-2.5 rounded font-bold hover:bg-slate-700 transition">
+                    <button onclick="addMadde()" class="w-full bg-slate-800 text-white py-2.5 rounded font-bold hover:bg-slate-700 transition">
                         YENİ ESAS MADDE EKLE
                     </button>
                 </div>
@@ -223,20 +133,16 @@
                 <div class="space-y-4 pt-4 border-t border-slate-200">
                     <div class="flex justify-between items-center">
                         <h2 class="text-sm font-bold text-slate-800">SON BÖLÜM</h2>
-                        <select id="son-bolum-no" class="p-1 border rounded text-xs font-bold bg-slate-50"
-                            onchange="updatePreview()">
+                        <select id="son-bolum-no" class="p-1 border rounded text-xs font-bold bg-slate-50" onchange="updatePreview()">
                             <option value="ÜÇÜNCÜ BÖLÜM">ÜÇÜNCÜ BÖLÜM</option>
                             <option value="DÖRDÜNCÜ BÖLÜM" selected>DÖRDÜNCÜ BÖLÜM</option>
                             <option value="BEŞİNCİ BÖLÜM">BEŞİNCİ BÖLÜM</option>
                         </select>
                     </div>
-                    <textarea id="hukum-yok-icerik" rows="2" class="w-full p-2 border rounded text-sm bg-slate-50"
-                        oninput="updatePreview()">Bu Yönetmelikte hüküm bulunmayan hallerde, ilgili diğer mevzuat hükümleri uygulanır.</textarea>
+                    <textarea id="hukum-yok-icerik" rows="2" class="w-full p-2 border rounded text-sm bg-slate-50" oninput="updatePreview()">Bu Yönetmelikte hüküm bulunmayan hallerde, ilgili diğer mevzuat hükümleri uygulanır.</textarea>
                     <div class="grid grid-cols-2 gap-2">
-                        <textarea id="yururluk-icerik" rows="2" class="p-2 border rounded text-sm bg-slate-50"
-                            oninput="updatePreview()">Bu Yönetmelik yayımı tarihinde yürürlüğe girer.</textarea>
-                        <textarea id="yurutme-icerik" rows="2" class="p-2 border rounded text-sm bg-slate-50"
-                            oninput="updatePreview()">Bu Yönetmelik hükümlerini Rektör yürütür.</textarea>
+                        <textarea id="yururluk-icerik" rows="2" class="p-2 border rounded text-sm bg-slate-50" oninput="updatePreview()"></textarea>
+                        <textarea id="yurutme-icerik" rows="2" class="p-2 border rounded text-sm bg-slate-50" oninput="updatePreview()"></textarea>
                     </div>
                 </div>
             </div>
@@ -247,24 +153,17 @@
             <div class="bg-white p-3 border-b border-slate-300 flex justify-between items-center shadow-sm no-print">
                 <span class="text-xs font-bold text-slate-600 ml-2">CANLI ÖNİZLEME (A4 FORMATI)</span>
                 <div class="flex gap-2">
-                    <button onclick="copyToClipboard()"
-                        class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-1.5 rounded text-xs font-bold border border-slate-300 transition">METNİ
-                        KOPYALA</button>
-                    <button onclick="saveAsWord()"
-                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded text-xs font-bold shadow-md transition"><i
-                            class="fa-solid fa-file-word mr-1"></i> WORD İNDİR</button>
-                    <button onclick="window.print()"
-                        class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded text-xs font-bold shadow-md transition">YAZDIR
-                        / PDF</button>
+                    <button onclick="copyToClipboard()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-1.5 rounded text-xs font-bold border border-slate-300 transition">METNİ KOPYALA</button>
+                    <button onclick="saveAsWord()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded text-xs font-bold shadow-md transition"><i class="fa-solid fa-file-word mr-1"></i> WORD İNDİR</button>
+                    <button onclick="window.print()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-1.5 rounded text-xs font-bold shadow-md transition">YAZDIR / PDF</button>
                 </div>
             </div>
-
-            <div class="flex-1 overflow-y-auto p-8 bg-slate-300/30">
+            
+            <div class="flex-1 overflow-y-auto p-8 flex justify-center bg-slate-300/30">
                 <div id="document-preview" class="document-preview"></div>
             </div>
 
-            <div id="toast"
-                class="absolute bottom-8 right-8 bg-slate-900 text-white px-6 py-3 rounded-full opacity-0 transition-opacity pointer-events-none z-50 shadow-2xl">
+            <div id="toast" class="absolute bottom-8 right-8 bg-slate-900 text-white px-6 py-3 rounded-full opacity-0 transition-opacity pointer-events-none z-50 shadow-2xl">
                 Kopyalandı!
             </div>
         </div>
@@ -278,55 +177,41 @@
                 <button onclick="closeUsulModal()">X</button>
             </div>
             <div class="p-6 space-y-4 text-sm text-slate-700">
-                <p><strong>İçtihat Raporu Uyarısı:</strong> Hazırladığınız mevzuatın Senato onayı ve Resmi Gazete
-                    yayımlanması aşamaları için aşağıdaki uygunluk görüşleri kontrol edilmelidir:</p>
+                <p><strong>İçtihat Raporu Uyarısı:</strong> Hazırladığınız mevzuatın Senato onayı ve Resmi Gazete yayımlanması aşamaları için aşağıdaki uygunluk görüşleri kontrol edilmelidir:</p>
                 <div class="space-y-3 mt-4">
-                    <label
-                        class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-200 cursor-pointer hover:bg-slate-100">
-                        <input type="checkbox" class="mt-1">
-                        <span><strong>Hukuk Müşavirliği Uygun Görüşü</strong><br><span
-                                class="text-xs text-slate-500">Normlar hiyerarşisi tam uyum denetimi tamamlandı
-                                mı?</span></span>
+                    <label class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-200 cursor-pointer hover:bg-slate-100">
+                        <input type="checkbox" class="mt-1"> 
+                        <span><strong>Hukuk Müşavirliği Uygun Görüşü</strong><br><span class="text-xs text-slate-500">Normlar hiyerarşisi tam uyum denetimi tamamlandı mı?</span></span>
                     </label>
-                    <label
-                        class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-200 cursor-pointer hover:bg-slate-100">
-                        <input type="checkbox" class="mt-1">
-                        <span><strong>YÖK Uygun Görüşü</strong><br><span class="text-xs text-slate-500">UAM Kuruluşları
-                                ve Sağlık Personeli düzenlemeleri için YÖK onayı eklendi mi?</span></span>
+                    <label class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-200 cursor-pointer hover:bg-slate-100">
+                        <input type="checkbox" class="mt-1"> 
+                        <span><strong>YÖK Uygun Görüşü</strong><br><span class="text-xs text-slate-500">UAM Kuruluşları ve Sağlık Personeli düzenlemeleri için YÖK onayı eklendi mi?</span></span>
                     </label>
-                    <label
-                        class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-200 cursor-pointer hover:bg-slate-100">
-                        <input type="checkbox" class="mt-1">
-                        <span><strong>Maliye Bakanlığı Görüşü</strong><br><span class="text-xs text-slate-500">Döner
-                                sermaye ve mali yük getiren taslaklar için görüş alındı mı?</span></span>
+                    <label class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-200 cursor-pointer hover:bg-slate-100">
+                        <input type="checkbox" class="mt-1"> 
+                        <span><strong>Maliye Bakanlığı Görüşü</strong><br><span class="text-xs text-slate-500">Döner sermaye ve mali yük getiren taslaklar için görüş alındı mı?</span></span>
                     </label>
                 </div>
             </div>
             <div class="bg-slate-50 p-4 text-right border-t border-slate-200">
-                <button onclick="closeUsulModal()"
-                    class="bg-slate-800 text-white px-4 py-2 rounded font-bold hover:bg-slate-700">KONTROLLERİ
-                    KAPAT</button>
+                <button onclick="closeUsulModal()" class="bg-slate-800 text-white px-4 py-2 rounded font-bold hover:bg-slate-700">KONTROLLERİ KAPAT</button>
             </div>
         </div>
     </div>
 
     <script>
         const trAlphabet = ['a', 'b', 'c', 'ç', 'd', 'e', 'f', 'g', 'ğ', 'h', 'ı', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'ö', 'p', 'r', 's', 'ş', 't', 'u', 'ü', 'v', 'y', 'z'];
-
-        // Demo verileriyle doldurulmuş Tanımlar
+        
+        // Boş Şablon Tanımları (Kurumsal Sabitler)
         let tanimlar = [
-            { id: 1, terim: 'Merkez (SEM)', aciklama: 'Kütahya Sağlık Bilimleri Üniversitesi Sürekli Eğitim Uygulama ve Araştırma Merkezini' },
-            { id: 2, terim: 'Müdür', aciklama: 'Merkezin Müdürünü' },
-            { id: 3, terim: 'Rektör', aciklama: 'Kütahya Sağlık Bilimleri Üniversitesi Rektörünü' },
-            { id: 4, terim: 'Senato', aciklama: 'Kütahya Sağlık Bilimleri Üniversitesi Senatosunu' },
-            { id: 5, terim: 'Üniversite', aciklama: 'Kütahya Sağlık Bilimleri Üniversitesini' }
+            { id: 1, terim: 'Rektör', aciklama: 'Kütahya Sağlık Bilimleri Üniversitesi Rektörünü' },
+            { id: 2, terim: 'Senato', aciklama: 'Kütahya Sağlık Bilimleri Üniversitesi Senatosunu' },
+            { id: 3, terim: 'Üniversite', aciklama: 'Kütahya Sağlık Bilimleri Üniversitesini' }
         ];
-
-        // Demo verileriyle doldurulmuş Maddeler
+        
+        // Boş Başlangıç Maddesi
         let maddeler = [
-            { id: 1, baslik: 'Merkezin amaçları', icerik: 'Merkezin amacı; Üniversitenin örgün lisans ve lisansüstü öğretim programları dışında verilecek tüm eğitim programlarını düzenlemek, bu bağlamda kamu, özel sektör, sivil toplum kuruluşları ile ulusal ve uluslararası kuruluşlara ihtiyaç duydukları alanlarda eğitim programları, kurslar, seminerler, sertifika programları düzenlemektir.' },
-            { id: 2, baslik: 'Merkezin faaliyet alanları', icerik: 'Merkez amaçları doğrultusunda aşağıdaki faaliyetlerde bulunur:\na) Kamu, özel sektör, uluslararası kuruluşlar ve kişilere yönelik ihtiyaç duydukları alanlarda ulusal ve uluslararası düzeyde eğitim programları, kurslar, seminerler ve konferanslar düzenlemek.\nb) Eğitim programları sonunda katılım belgesi, sertifika ve benzeri belgeler vermek.\nc) Toplumun her kesimine yönelik hayat boyu öğrenme kapsamında eğitim faaliyetlerini projelendirmek ve yürütmek.' },
-            { id: 3, baslik: 'Merkezin yönetim organları', icerik: 'Merkezin yönetim organları şunlardır:\na) Müdür.\nb) Yönetim Kurulu.\nc) Danışma Kurulu.' }
+            { id: 1, baslik: '', icerik: '' }
         ];
 
         window.onload = () => {
@@ -339,9 +224,9 @@
         function autoUpdateContext() {
             const ad = document.getElementById('mevzuat-adi').value.toLocaleUpperCase('tr-TR');
             const tur = ad.includes('YÖNETMELİK') ? 'Yönetmelik' : (ad.includes('YÖNERGE') ? 'Yönerge' : 'Usul ve Esaslar');
-
+            
             document.getElementById('hukum-yok-icerik').value = `Bu ${tur}'te hüküm bulunmayan hallerde, ilgili diğer mevzuat hükümleri uygulanır.`;
-
+            
             if (tur === 'Yönetmelik') {
                 document.getElementById('yururluk-icerik').value = `Bu Yönetmelik yayımı tarihinde yürürlüğe girer.`;
             } else {
@@ -363,17 +248,20 @@
             if (!val) return;
 
             val = val.replace(/\beğer (.*?) ise\b/gi, "$1 halinde")
-                .replace(/\beğer (.*?) (olursa|varsa)\b/gi, "$1 bulunması halinde")
-                .replace(/\byapılmalıdır\b/gi, "yapılması zorunludur")
-                .replace(/\byapılacaktır\b/gi, "yapılır")
-                .replace(/\bedilecektir\b/gi, "edilir")
-                .replace(/\biçin\b/gi, "amacıyla")
-                .replace(/\bkuralı\b/gi, "usul ve esasları")
-                .replace(/\byasaktır\b/gi, "yapılamaz");
-
+                     .replace(/\beğer (.*?) (olursa|varsa)\b/gi, "$1 bulunması halinde")
+                     .replace(/\byapılmalıdır\b/gi, "yapılması zorunludur")
+                     .replace(/\byapılacaktır\b/gi, "yapılır")
+                     .replace(/\bedilecektir\b/gi, "edilir")
+                     .replace(/\biçin\b/gi, "amacıyla")
+                     .replace(/\bkuralı\b/gi, "usul ve esasları")
+                     .replace(/\byasaktır\b/gi, "yapılamaz");
+            
             val = val.replace(/,([^\s])/g, ', $1');
-
-            el.value = val;
+            
+            if (el.value !== val) {
+                el.value = val;
+                el.dispatchEvent(new Event('input')); 
+            }
             updatePreview();
         }
 
@@ -384,8 +272,8 @@
                 const div = document.createElement('div');
                 div.className = 'flex gap-2';
                 div.innerHTML = `
-                    <input type="text" value="${t.terim}" class="w-1/3 p-1.5 border rounded text-xs" oninput="updateTanim(${t.id}, 'terim', this.value)">
-                    <input type="text" value="${t.aciklama}" class="w-2/3 p-1.5 border rounded text-xs" oninput="updateTanim(${t.id}, 'aciklama', this.value)">
+                    <input type="text" value="${t.terim}" placeholder="Terim" class="w-1/3 p-1.5 border rounded text-xs" oninput="updateTanim(${t.id}, 'terim', this.value)">
+                    <input type="text" value="${t.aciklama}" placeholder="Açıklaması" class="w-2/3 p-1.5 border rounded text-xs" oninput="updateTanim(${t.id}, 'aciklama', this.value)">
                     <button onclick="removeTanim(${t.id})" class="text-red-500 font-bold px-1 text-xs hover:bg-red-50 rounded">X</button>
                 `;
                 cont.appendChild(div);
@@ -416,7 +304,7 @@
                 const div = document.createElement('div');
                 div.className = 'bg-slate-50 p-4 rounded border border-slate-200 relative group shadow-sm';
                 div.innerHTML = `
-                    <div class="absolute -top-2 -left-2 bg-blue-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold shadow">MADDE ${idx + 5}</div>
+                    <div class="absolute -top-2 -left-2 bg-blue-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold shadow">MADDE ${idx+5}</div>
                     <button onclick="removeMadde(${m.id})" class="absolute top-2 right-2 text-slate-400 hover:text-red-600 bg-white rounded p-1"><i class="fa-solid fa-trash-can"></i></button>
                     <input type="text" value="${m.baslik}" placeholder="Madde Başlığı" class="w-full p-2 border rounded text-xs font-bold mb-2 focus:ring-1 focus:ring-blue-500 outline-none" onblur="this.value=formatMaddeBaslik(this.value); updateMadde(${m.id}, 'baslik', this.value)">
                     <textarea rows="4" class="w-full p-2 border rounded text-xs focus:ring-1 focus:ring-blue-500 outline-none" placeholder="Madde içeriğini yazın..." onblur="formatInput(this)" oninput="updateMadde(${m.id}, 'icerik', this.value)">${m.icerik}</textarea>
@@ -450,13 +338,14 @@
             const m = maddeler.find(madde => madde.id === id);
             let s = m.icerik;
             s = s.replace(/eğer (.*?) ise/gi, "$1 durumunda")
-                .replace(/yapacaktır/gi, "yerine getirir")
-                .replace(/mecburdur/gi, "yükümlüdür")
-                .replace(/yapılacaktır/gi, "gerçekleştirilir");
-
-            const safeText = s.replace(/'/g, "\\'");
+                 .replace(/yapacaktır/gi, "yerine getirir")
+                 .replace(/mecburdur/gi, "yükümlüdür")
+                 .replace(/yapılacaktır/gi, "gerçekleştirilir");
+            
+            const encodedText = encodeURIComponent(s);
             const sBox = document.getElementById(`suggest-${id}`);
-            sBox.innerHTML = `Tavsiye: "${s}" <button onclick="applySuggest(${id}, '${safeText}')" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-emerald-500 text-white px-2 py-0.5 rounded shadow">UYGULA</button>`;
+            sBox.className = "text-[10px] bg-purple-100 p-3 rounded border border-purple-200 flex-1 ml-4 italic text-purple-800 relative whitespace-pre-wrap pr-20";
+            sBox.innerHTML = `Tavsiye: "${s}" <button onclick="applySuggest(${id}, decodeURIComponent('${encodedText}'))" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-emerald-500 text-white px-3 py-1.5 rounded shadow font-bold not-italic hover:bg-emerald-600 transition">UYGULA</button>`;
             sBox.classList.remove('hidden');
         }
 
@@ -468,22 +357,22 @@
         }
 
         function updatePreview() {
-            const ad = document.getElementById('mevzuat-adi').value.toLocaleUpperCase('tr-TR') || '[MEVZUAT ADI]';
+            const ad = document.getElementById('mevzuat-adi').value.toLocaleUpperCase('tr-TR') || '[MEVZUATIN ADI YAZILACAKTIR]';
             const tur = getMevzuatTuru(ad);
             const turEk = tur === 'Yönetmelik' ? 'Yönetmelikte' : (tur === 'Yönerge' ? 'Yönergede' : 'Usul ve Esaslarda');
 
             let html = `<div style="text-align:center; font-weight:bold; margin-bottom: 25px; font-size: 14pt; line-height:1.3;">${ad}</div>`;
-
+            
             // BİRİNCİ BÖLÜM
             html += `<div class="bolum-ana">BİRİNCİ BÖLÜM</div>`;
             html += `<div class="bolum-alt">Başlangıç Hükümleri</div>`;
-
+            
             html += `<div class="madde-baslik">Amaç</div>`;
             html += `<p><span class="madde-no">MADDE 1-</span> (1) ${document.getElementById('amac-icerik').value || '...'}</p>`;
-
+            
             html += `<div class="madde-baslik">Kapsam</div>`;
             html += `<p><span class="madde-no">MADDE 2-</span> (1) ${document.getElementById('kapsam-icerik').value || '...'}</p>`;
-
+            
             html += `<div class="madde-baslik">Dayanak</div>`;
             html += `<p><span class="madde-no">MADDE 3-</span> (1) ${document.getElementById('dayanak-icerik').value || '...'}</p>`;
 
@@ -492,11 +381,11 @@
             let tanimBaslik = hasKisaltma ? "Tanımlar ve kısaltmalar" : "Tanımlar";
             html += `<div class="madde-baslik">${tanimBaslik}</div>`;
             html += `<p><span class="madde-no">MADDE 4-</span> (1) Bu ${turEk} geçen;</p>`;
-
-            tanimlar.sort((a, b) => a.terim.localeCompare(b.terim, 'tr-TR'));
+            
+            tanimlar.sort((a,b) => a.terim.localeCompare(b.terim, 'tr-TR'));
             tanimlar.forEach((t, i) => {
                 let harf = trAlphabet[i % trAlphabet.length];
-                html += `<div class="bent-icerik">${harf}) ${t.terim}: ${t.aciklama},</div>`;
+                html += `<div class="bent-icerik">${harf}) ${t.terim ? t.terim : '...'}: ${t.aciklama ? t.aciklama : '...'},</div>`;
             });
             html += `<div class="madde-icerik">ifade eder.</div>`;
 
@@ -504,14 +393,25 @@
             html += `<div class="bolum-ana">İKİNCİ BÖLÜM</div>`;
             html += `<div class="bolum-alt">Esas Hükümler</div>`;
             maddeler.forEach((m, idx) => {
-                html += `<div class="madde-baslik">${formatMaddeBaslik(m.baslik)}</div>`;
-
-                // İçerikteki alt satırları (a), b)) bente dönüştürme mantığı
+                html += `<div class="madde-baslik">${formatMaddeBaslik(m.baslik) || '...'}</div>`;
+                
                 const lines = m.icerik.split('\n');
-                html += `<p><span class="madde-no">MADDE ${idx + 5}-</span> (1) ${lines[0] || '...'}</p>`;
+                let firstLine = lines[0] || '...';
+                
+                if (/^\(\d+\)/.test(firstLine.trim())) {
+                    html += `<p><span class="madde-no">MADDE ${idx+5}-</span> ${firstLine}</p>`;
+                } else {
+                    html += `<p><span class="madde-no">MADDE ${idx+5}-</span> (1) ${firstLine}</p>`;
+                }
+                
                 for (let i = 1; i < lines.length; i++) {
-                    if (lines[i].trim()) {
-                        html += `<div class="bent-icerik">${lines[i]}</div>`;
+                    let line = lines[i].trim();
+                    if (line) {
+                        if (/^\(\d+\)/.test(line)) {
+                            html += `<p>${line}</p>`;
+                        } else {
+                            html += `<div class="bent-icerik">${line}</div>`;
+                        }
                     }
                 }
             });
@@ -520,15 +420,15 @@
             const sonMaddeNo = maddeler.length + 5;
             html += `<div class="bolum-ana">${document.getElementById('son-bolum-no').value}</div>`;
             html += `<div class="bolum-alt">Çeşitli ve Son Hükümler</div>`;
-
+            
             html += `<div class="madde-baslik">Hüküm bulunmayan haller</div>`;
             html += `<p><span class="madde-no">MADDE ${sonMaddeNo}-</span> (1) ${document.getElementById('hukum-yok-icerik').value}</p>`;
-
+            
             html += `<div class="madde-baslik">Yürürlük</div>`;
-            html += `<p><span class="madde-no">MADDE ${sonMaddeNo + 1}-</span> (1) ${document.getElementById('yururluk-icerik').value}</p>`;
-
+            html += `<p><span class="madde-no">MADDE ${sonMaddeNo+1}-</span> (1) ${document.getElementById('yururluk-icerik').value}</p>`;
+            
             html += `<div class="madde-baslik">Yürütme</div>`;
-            html += `<p><span class="madde-no">MADDE ${sonMaddeNo + 2}-</span> (1) ${document.getElementById('yurutme-icerik').value}</p>`;
+            html += `<p><span class="madde-no">MADDE ${sonMaddeNo+2}-</span> (1) ${document.getElementById('yurutme-icerik').value}</p>`;
 
             document.getElementById('document-preview').innerHTML = html;
         }
@@ -546,7 +446,7 @@
             window.getSelection().addRange(range);
             document.execCommand('copy');
             window.getSelection().removeAllRanges();
-
+            
             const t = document.getElementById('toast');
             t.classList.remove('opacity-0');
             setTimeout(() => t.classList.add('opacity-0'), 2000);
@@ -554,22 +454,20 @@
 
         function saveAsWord() {
             const content = document.getElementById('document-preview').innerHTML;
-            // Word dosyasının stillerini tanımlayalım
             const preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Mevzuat Taslağı</title><style>body { font-family: 'Times New Roman', Times, serif; font-size: 12pt; } .madde-baslik { font-weight: bold; margin-top: 10px; margin-bottom: 2px; } .madde-no { font-weight: bold; } .bolum-ana { text-align: center; font-weight: bold; margin-top: 20px; } .bolum-alt { text-align: center; font-weight: bold; margin-bottom: 15px; } .madde-icerik { text-indent: 1.25cm; text-align: justify; } .bent-icerik { padding-left: 1.25cm; text-align: justify; }</style></head><body>";
             const postHtml = "</body></html>";
             const html = preHtml + content + postHtml;
 
             const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
             const url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
-
-            // Dosya adını girilen mevzuat adından oluşturalım
+            
             let filename = document.getElementById('mevzuat-adi').value || 'KSBU_Mevzuat_Taslagi';
             filename = filename.replace(/[^a-z0-9ğüşıöç]/gi, '_').toLowerCase() + '.doc';
-
+            
             const downloadLink = document.createElement("a");
             document.body.appendChild(downloadLink);
-
-            if (navigator.msSaveOrOpenBlob) {
+            
+            if(navigator.msSaveOrOpenBlob){
                 navigator.msSaveOrOpenBlob(blob, filename);
             } else {
                 downloadLink.href = url;
@@ -583,5 +481,4 @@
         function closeUsulModal() { document.getElementById('usulModal').classList.add('hidden'); }
     </script>
 </body>
-
 </html>
